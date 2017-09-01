@@ -1,0 +1,26 @@
+<div id="titulo" class="page-header">
+  Selecione a opção desejada:
+</div>
+
+<br>
+<br>
+
+<table align="center" class="animated pulse">
+  <tr>
+    <td>
+      <div>
+        <%= link_to controller: "course_universities", action: "busca_normal" do %>
+          <% image_tag "pesquisa_1", size:"80", title: "Busca Normal" %>
+        <% end %>
+      </div>
+    </td>
+
+    <td>
+      <div>
+        <%= link_to controller: "course_universities", action: "busca_personalizada" do %>
+          <% image_tag "pesquisa_2", size:"80", title: "Busca Personalizada" %>
+        <% end %>
+      </div>
+    </td>
+  </tr>
+</table>

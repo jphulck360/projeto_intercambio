@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to new_period_university_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Period university
+  <% end %>
+  <h1>Listing period_universities</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @period_universities) do |period_university| %>
+            <td><%= link_to 'Show', period_university %></td>
+        <td><%= link_to 'Edit', edit_period_university_path(period_university) %></td>
+        <td><%= link_to 'Destroy', period_university, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

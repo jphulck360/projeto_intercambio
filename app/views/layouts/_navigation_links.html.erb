@@ -1,0 +1,20 @@
+<%# add navigation links to this file %>
+
+<!-- Caso estiver logado o menu aparece assim: -->
+<% if user_signed_in? %>
+	<li><%= link_to 'Usuários', users_user_path('users') %></li>
+	<li>
+		<%= link_to 'Agendamentos', schedules_menu_agendamento_path %>
+	</li>
+	<li><%= link_to 'Línguas', languages_path('languages') %></li>
+	<li><%= link_to 'Climas', climates_path('climates') %></li>
+	<li><%= link_to 'Continentes', continents_path('continents') %></li>
+	<li><%= link_to 'Países', countries_path('countries') %></li>
+	<li><%= link_to 'Cidades', cities_path('cities') %></li>
+	<li><%= link_to 'Universidades', universities_path('universities') %></li>
+	<li><%= link_to 'Cursos', courses_path('courses') %></li>
+	<li><%= link_to 'Custos', costs_path('costs') %></li>
+	<li><%= link_to 'Estudantes', students_path('students') %></li>
+	<li><%= link_to 'Períodos', periods_path('periods') %></li>
+<% else %>
+<% end %>

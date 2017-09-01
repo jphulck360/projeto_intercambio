@@ -1,0 +1,17 @@
+<%= form_for(country_climate) do |f| %>
+  <% if country_climate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(country_climate.errors.count, "error") %> prohibited this country_climate from being saved:</h2>
+
+      <ul>
+      <% country_climate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div id="titulo" class="page-header">
+  Lista de Climas
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @climates.each do |climate| %>
+      <tr>
+        <td><%= climate.id %></td>
+        <td><%= climate.nome %></td>
+        <td><%= link_to 'Show', climate %></td>
+        <td><%= link_to 'Edit', edit_climate_path(climate) %></td>
+        <td><%= link_to 'Destroy', climate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div id="link_centro">
+<%= link_to image_tag("clima.png",:title => 'Cadastrar clima',size: "50"), new_climate_path %>
+</div>
+
+<br>
+<%= will_paginate @vehicles %> <!-- Fazer paginação -->
+<br>

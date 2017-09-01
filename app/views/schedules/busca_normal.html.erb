@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<div id="titulo" class="page-header">
+  Busca Normal:
+</div>
+
+<!--
+<table align="center">
+  	<tr>
+	    <td>
+			<div class="field">
+		        <%# text_field_tag :busca_curso %>
+		        <%# search_form_for @q, url: orders_rel_est_mat_path do |f| %>
+		    </div>
+	    </td>
+  	</tr>
+</table>
+-->
+
+<%= search_form_for @q, url: schedules_busca_normal_path do |f| %>
+  <table align="center">
+    <tr>
+      <td>
+        <%= f.label 'Cursos:' %>
+        <%= text_field_tag :busca_curso %>
+        <%# f.collection_select(:course_id, Course.all, :id, :nome) %>
+      </td>
+      <td>
+        <br>
+        <%= f.submit 'Buscar' %>
+      </td>
+    </tr>
+  </table>
+<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Curso</th>
+      <th>Nome</th>
+      <th>Custo</th>
+      <!-- <th>Valor</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |c_uni| %>
+      <tr>
+        <td><%= c_uni.id %></td>
+        <td><%= c_uni.course.nome %></td>
+        <td><%= c_uni.university.nome %></td>
+        <td><%= c_uni.cost.custo %></td>
+        <td><%= link_to 'Show', course_university %></td>
+        <td><%= link_to 'Edit', edit_course_university_path(course_university) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,2 @@
+module CityUniversitiesHelper
+end

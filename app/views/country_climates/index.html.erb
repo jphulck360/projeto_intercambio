@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Country Climates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @country_climates.each do |country_climate| %>
+      <tr>
+        <td><%= link_to 'Show', country_climate %></td>
+        <td><%= link_to 'Edit', edit_country_climate_path(country_climate) %></td>
+        <td><%= link_to 'Destroy', country_climate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Country Climate', new_country_climate_path %>

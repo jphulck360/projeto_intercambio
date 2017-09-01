@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div id="titulo" class="page-header">
+  Lista de Cidades
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td><%= city.id %></td>
+        <td><%= city.nome %></td>
+        <td><%= link_to 'Show', city %></td>
+        <td><%= link_to 'Edit', edit_city_path(city) %></td>
+        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div id="link_centro">
+<%= link_to image_tag("cidade.png",:title => 'Cadastrar cidade',size: "50"), new_city_path %>
+</div>
+
+<br>
+<%= will_paginate @vehicles %> <!-- Fazer paginação -->
+<br>

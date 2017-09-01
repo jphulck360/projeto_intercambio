@@ -1,0 +1,63 @@
+<div id="titulo" class="animated pulse">
+  Pesquisa Personalizada
+</div>
+
+<%= form_tag(course_universities_busca_personalizada_path, :method => :get) do %>
+
+  <table align="center">
+    <tr>
+      <td>
+        <div class="form-group">
+          <%= label_tag 'Continente' %>
+          <%= select_tag :pesq_cont, options_from_collection_for_select(@continentes, "id", "nome"),:required => true, prompt: "--- SELECIONE ---" %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="form-group">
+          <%= label_tag 'Clima' %>
+          <%= select_tag :pesq_clima, options_from_collection_for_select(@climas, "id", "nome"),:required => true, prompt: "--- SELECIONE ---" %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="form-group">
+          <%= label_tag 'Idioma' %>
+          <%= select_tag :pesq_idioma, options_from_collection_for_select(@linguas, "id", "nome"),:required => true, prompt: "--- SELECIONE ---" %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="form-group">
+          <%= label_tag 'Perfil' %>
+          <%= select_tag :pesq_periodo, options_from_collection_for_select(@periodos, "id", "duracao"),:required => true, prompt: "--- SELECIONE ---" %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="form-group">
+          <%= label_tag 'Perfil' %>
+          <%= select_tag :pesq_custo, options_from_collection_for_select(@custos, "id", "custo"),:required => true, prompt: "--- SELECIONE ---" %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="actions">
+          <%= submit_tag "Pesquisar", class: "btn btn-primary"  %>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+
+<% end %>

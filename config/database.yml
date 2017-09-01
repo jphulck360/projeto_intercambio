@@ -1,0 +1,59 @@
+######################################################################
+# Conexão MySQL
+#
+# default: &default
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: 5
+#   username: root
+#   password: root
+#   socket: /var/run/mysqld/mysqld.sock
+
+# development:
+#   <<: *default
+#   database: PROJETO_INTERCAMBIO_development
+
+
+# test:
+#   <<: *default
+#   database: PROJETO_INTERCAMBIO_test
+
+
+
+# production:
+#   <<: *default
+#   database: PROJETO_INTERCAMBIO_production
+#   username: PROJETO_INTERCAMBIO
+#   password: <%= ENV['PROJETO_INTERCAMBIO_DATABASE_PASSWORD'] %>
+######################################################################
+
+# Conexão Postgres
+development:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: intercambio_db
+  pool: 5
+  username: postgres
+  password: sismat
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: intercambio_db
+  pool: 5
+  username: postgres
+  password: sismat
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: intercambio_db
+  pool: 5
+  username: postgres
+  password: sismat
+  host: localhost

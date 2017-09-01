@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div id="titulo" class="page-header">
+  Lista de Continentes
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @continents.each do |continent| %>
+      <tr>
+        <td><%= continent.id %></td>
+        <td><%= continent.nome %></td>
+        <td><%= link_to 'Show', continent %></td>
+        <td><%= link_to 'Edit', edit_continent_path(continent) %></td>
+        <td><%= link_to 'Destroy', continent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div id="link_centro">
+<%= link_to image_tag("continente.png",:title => 'Cadastrar continente',size: "50"), new_continent_path %>
+</div>
+
+<br>
+<%= will_paginate @vehicles %> <!-- Fazer paginação -->
+<br>

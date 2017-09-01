@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div id="titulo" class="page-header">
+  Níveis de Custo
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Custo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @costs.each do |cost| %>
+      <tr>
+        <td><%= cost.id %></td>
+        <td><%= cost.custo %></td>
+        <td><%= link_to 'Show', cost %></td>
+        <td><%= link_to 'Edit', edit_cost_path(cost) %></td>
+        <td><%= link_to 'Destroy', cost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div id="link_centro">
+<%= link_to image_tag("custo.png",:title => 'Cadastrar custo',size: "50"), new_cost_path %>
+</div>
+
+<br>
+<%= will_paginate @vehicles %> <!-- Fazer paginação -->
+<br>

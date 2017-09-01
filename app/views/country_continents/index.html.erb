@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Country Continents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @country_continents.each do |country_continent| %>
+      <tr>
+        <td><%= link_to 'Show', country_continent %></td>
+        <td><%= link_to 'Edit', edit_country_continent_path(country_continent) %></td>
+        <td><%= link_to 'Destroy', country_continent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Country Continent', new_country_continent_path %>

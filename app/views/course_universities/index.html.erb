@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Course Universities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Curso</th>
+      <th>Universidade</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_universities.each do |c_uni| %>
+      <tr>
+        <td><%= c_uni.id %></td>
+        <td><%= c_uni.course.nome %></td>
+        <td><%= c_uni.university.nome %></td>
+        <td><%# link_to 'Show', course_university %></td>
+        <td><%# link_to 'Edit', edit_course_university_path(course_university) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course University', new_course_university_path %>
